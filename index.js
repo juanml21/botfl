@@ -25,23 +25,6 @@ client.on("message", (message) => {
   }
 });
 client.on("message", (message) => {
-  if (!message.guild)
-   return;
-  if (message.author.bot) return;
-  const cont = message.content.split(" ").slice(1);
-  const args = cont.join(" ");
-  if (message.content === '!kpi') {
-    // Joining the channel and creating a VoiceConnection.
-    message.member.voice.channel.join().then((VoiceConnection) => {
-      // Playing the music, and, on finish, disconnecting the bot.
-      VoiceConnection.play("./music/test/cora.mp3").on("finish", () =>
-        VoiceConnection
-      );
-    });
-    
-  }
-});
-client.on("message", (message) => {
   if (message.author.bot) return;
   const cont = message.content.split(" ").slice(1);
   const args = cont.join(" ");
